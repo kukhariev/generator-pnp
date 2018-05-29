@@ -1,19 +1,25 @@
 {
   "name": "generator-pnp",
-  "version": "0.0.1",
-  "description":
-    "Generate TypeScript or JavaScript node project",
+  "version": "1.0.0",
+  "description": "Generate TypeScript or JavaScript node project",
   "author": {
     "name": "o.kukhariev",
     "email": "q_h@inbox.ru"
   },
   "repository": "kukhariev/generator-pnp",
-  "keywords": ["yeoman-generator", "typescript", "node", "module"],
+  "keywords": [
+    "yeoman-generator",
+    "typescript",
+    "node",
+    "module"
+  ],
   "license": "MIT",
   "engines": {
     "npm": ">= 6.0.0"
   },
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "main": "generators/index.js",
   "typings": "generators/index.d.ts",
   "scripts": {
