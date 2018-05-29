@@ -1,0 +1,6 @@
+/src
+/test
+.eslintrc.json
+.editorconfig
+.travis.yml
+.vscode
