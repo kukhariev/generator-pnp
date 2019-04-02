@@ -62,10 +62,7 @@ export class GeneratorPnpApp extends Generator {
   initializing() {
     this.log(
       yosay(
-        'Welcome to the ' +
-          chalk.default.yellow(
-            `Node module generator (${generatorPkg.version})`
-          )
+        'Welcome to the ' + chalk.default.yellow(`Node module generator (${generatorPkg.version})`)
       )
     );
     this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
@@ -129,18 +126,14 @@ export class GeneratorPnpApp extends Generator {
         type: 'confirm',
         name: 'travis',
         default: true,
-        when:
-          this.options.travis === undefined &&
-          this.options.appveyor === undefined,
+        when: this.options.travis === undefined && this.options.appveyor === undefined,
         message: 'include .travis.yml file'
       },
       {
         type: 'confirm',
         name: 'appveyor',
         default: true,
-        when:
-          this.options.travis === undefined &&
-          this.options.appveyor === undefined,
+        when: this.options.travis === undefined && this.options.appveyor === undefined,
         message: 'include appveyor.yml file'
       },
       {
@@ -148,7 +141,7 @@ export class GeneratorPnpApp extends Generator {
         name: 'git',
         default: true,
         when: this.options.git === undefined,
-        message: 'include appveyor.yml file'
+        message: 'init git'
       }
     ];
     await this._askForModuleName();
@@ -199,7 +192,8 @@ export class GeneratorPnpApp extends Generator {
       ),
       license: 'MIT',
       engines: {
-        npm: '>= 6.0.0'
+        npm: '>= 5.8.0',
+        node: '>= 6.0.0'
       }
     };
     this.fs.writeJSON(this.destinationPath('package.json'), pkg);
