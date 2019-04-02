@@ -32,22 +32,21 @@ export class GeneratorPnpTsc extends Generator {
     this.log('TSC\n');
     const pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
     const { scope, localName, safeName } = utils.nameParts(pkg.name);
-    this.fs.copy(this.templatePath('./config/**/*'), this.destinationPath());
-    this.fs.copy(this.templatePath('./config/.*'), this.destinationPath());
-    this.fs.copy(
-      this.templatePath('test/mocha.opts'),
-      this.destinationPath('test/mocha.opts')
-    );
+    try {
+      this.fs.copy(this.templatePath('config/*'), this.destinationPath());
+    } catch {}
+    try {
+      this.fs.copy(this.templatePath('config/.*'), this.destinationPath());
+    } catch {}
+    this.fs.copy(this.templatePath('test/mocha.opts'), this.destinationPath('test/mocha.opts'));
     this.fs.copyTpl(
       this.templatePath('test/template._ts'),
       this.destinationPath(`test/${localName}.spec.ts`),
       { localName, safeName }
     );
-    this.fs.copyTpl(
-      this.templatePath('src/index._ts'),
-      this.destinationPath('src/index.ts'),
-      { localName }
-    );
+    this.fs.copyTpl(this.templatePath('src/index._ts'), this.destinationPath('src/index.ts'), {
+      localName
+    });
     this.fs.copyTpl(
       this.templatePath('src/template._ts'),
       this.destinationPath(`src/${localName}.ts`),

@@ -21,27 +21,23 @@ export class GeneratorPnpJs extends Generator {
   }
   public writing() {
     const pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
-    const { scope, localName, safeName } = utils.nameParts(
-      this.options.name || pkg.name
-    );
+    const { scope, localName, safeName } = utils.nameParts(this.options.name || pkg.name);
     try {
-      this.fs.copy(this.templatePath('./config/*'), this.destinationPath());
-    } catch (error) {}
-    this.fs.copy(this.templatePath('./config/.*'), this.destinationPath());
-    this.fs.copy(
-      this.templatePath('test/mocha.opts'),
-      this.destinationPath('test/mocha.opts')
-    );
+      this.fs.copy(this.templatePath('config/*'), this.destinationPath());
+    } catch {}
+    try {
+      this.fs.copy(this.templatePath('config/.*'), this.destinationPath());
+    } catch {}
+    this.fs.copy(this.templatePath('test/mocha.opts'), this.destinationPath('test/mocha.opts'));
     this.fs.copyTpl(
       this.templatePath('test/template._js'),
       this.destinationPath(`test/${localName}.spec.js`),
       { localName, safeName }
     );
-    this.fs.copyTpl(
-      this.templatePath('lib/index._js'),
-      this.destinationPath('lib/index.js'),
-      { localName, safeName }
-    );
+    this.fs.copyTpl(this.templatePath('lib/index._js'), this.destinationPath('lib/index.js'), {
+      localName,
+      safeName
+    });
     this.fs.copyTpl(
       this.templatePath('lib/index.dt._ts'),
       this.destinationPath('lib/index.dt.ts'),
@@ -54,7 +50,7 @@ export class GeneratorPnpJs extends Generator {
     pkg.scripts = {
       test: 'mocha',
       'test:watch': 'mocha --watch',
-      lint: 'eslint lib/**',
+      lint: 'eslint lib/**/*.js',
       preversion: 'npm run lint',
       postversion: 'git push --follow-tags'
     };
