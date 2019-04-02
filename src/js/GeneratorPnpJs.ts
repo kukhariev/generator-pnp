@@ -52,11 +52,11 @@ export class GeneratorPnpJs extends Generator {
     pkg.typings = 'lib/index.d.ts';
 
     pkg.scripts = {
-      test: './node_modules/.bin/mocha',
-      'test:watch': './node_modules/.bin/mocha --watch',
+      test: 'mocha',
+      'test:watch': 'mocha --watch',
       lint: 'eslint lib/**',
       preversion: 'npm run lint',
-      postversion: 'git push --follow-tags && npm publish'
+      postversion: 'git push --follow-tags'
     };
 
     const generatorPkg = require('../../package.json');

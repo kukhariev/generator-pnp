@@ -56,7 +56,7 @@ export class GeneratorPnpApp extends Generator {
 
     this.option('git', {
       type: Boolean,
-      description: 'Intialize a git repository'
+      description: 'Initialize a git repository'
     });
   }
   initializing() {

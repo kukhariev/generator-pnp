@@ -59,12 +59,12 @@ export class GeneratorPnpTsc extends Generator {
     pkg.scripts = {
       clean: 'rimraf lib',
       build: 'npm run tslint && npm run clean && npm run build-ts',
-      test: './node_modules/.bin/mocha',
-      'test:watch': './node_modules/.bin/mocha --watch',
+      test: 'mocha',
+      'test:watch': 'mocha --watch',
       'build-ts': 'tsc',
       tslint: 'tslint -c tslint.json -p tsconfig.json',
       preversion: 'npm run build',
-      postversion: 'git push --follow-tags && npm publish'
+      postversion: 'git push --follow-tags'
     };
     const generatorPkg = require('../../package.json');
 
