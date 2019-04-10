@@ -39,8 +39,8 @@ export class GeneratorPnpJs extends Generator {
       safeName
     });
     this.fs.copyTpl(
-      this.templatePath('lib/index.dt._ts'),
-      this.destinationPath('lib/index.dt.ts'),
+      this.templatePath('lib/index.d._ts'),
+      this.destinationPath('lib/index.d.ts'),
       { localName, safeName }
     );
     pkg.files = ['lib'];
