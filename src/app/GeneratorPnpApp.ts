@@ -132,7 +132,7 @@ export class GeneratorPnpApp extends Generator {
       {
         type: 'confirm',
         name: 'appveyor',
-        default: true,
+        default: false,
         when: this.options.travis === undefined && this.options.appveyor === undefined,
         message: 'include appveyor.yml file'
       },
