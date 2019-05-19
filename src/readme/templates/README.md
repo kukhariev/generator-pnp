@@ -34,7 +34,7 @@ const { <%= safeName %> } = require('<%= safeName %>');
 
 [npm-image]: https://img.shields.io/npm/v/<%= name %>.svg
 [npm-url]: https://www.npmjs.com/package/<%= name %>
-<% if (appveyor) { %>
+<% if (travis) { %>
 [travis-image]: https://img.shields.io/travis/<%= githubAccount %>/<%= localName %>/master.svg
 [travis-url]: https://travis-ci.org/<%= githubAccount %>/<%= localName %>
 <% } -%>
