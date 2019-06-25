@@ -192,8 +192,7 @@ export class GeneratorPnpApp extends Generator {
       ),
       license: 'MIT',
       engines: {
-        npm: '>= 5.8.0',
-        node: '>= 6.0.0'
+        node: '>= 8.0.0'
       }
     };
     this.fs.writeJSON(this.destinationPath('package.json'), pkg);

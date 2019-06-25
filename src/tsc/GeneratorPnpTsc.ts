@@ -60,10 +60,9 @@ export class GeneratorPnpTsc extends Generator {
       build: 'npm run tslint && npm run clean && npm run build-ts',
       test: 'mocha',
       'test:watch': 'mocha --watch',
-      'build-ts': 'tsc',
+      'build:ts': 'tsc',
       tslint: 'tslint -c tslint.json -p tsconfig.json',
-      preversion: 'npm run build',
-      postversion: 'git push --follow-tags'
+      postversion: 'npm run build && git push --follow-tags'
     };
     const generatorPkg = require('../../package.json');
 

@@ -3,4 +3,5 @@
 .eslintrc.json
 .editorconfig
 .travis.yml
+appveyor.yml
 .vscode

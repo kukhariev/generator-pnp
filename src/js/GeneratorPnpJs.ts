@@ -38,11 +38,10 @@ export class GeneratorPnpJs extends Generator {
       localName,
       safeName
     });
-    this.fs.copyTpl(
-      this.templatePath('lib/index.d._ts'),
-      this.destinationPath('lib/index.d.ts'),
-      { localName, safeName }
-    );
+    this.fs.copyTpl(this.templatePath('lib/index.d._ts'), this.destinationPath('lib/index.d.ts'), {
+      localName,
+      safeName
+    });
     pkg.files = ['lib'];
     pkg.main = 'lib/index.js';
     pkg.typings = 'lib/index.d.ts';
@@ -51,8 +50,7 @@ export class GeneratorPnpJs extends Generator {
       test: 'mocha',
       'test:watch': 'mocha --watch',
       lint: 'eslint lib/**/*.js',
-      preversion: 'npm run lint',
-      postversion: 'git push --follow-tags'
+      postversion: 'npm run lint && git push --follow-tags'
     };
 
     const generatorPkg = require('../../package.json');
