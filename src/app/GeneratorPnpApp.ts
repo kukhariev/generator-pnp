@@ -145,7 +145,7 @@ export class GeneratorPnpApp extends Generator {
       }
     ];
     await this._askForModuleName();
-    return this.prompt(prompts).then(answers => {
+    return this.prompt(prompts as any).then(answers => {
       this.options = {
         ...this.options,
         ...answers,

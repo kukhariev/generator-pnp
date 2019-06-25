@@ -1,4 +1,3 @@
-import { expect } from 'chai';
 const path = require('path');
 const assert = require('yeoman-assert');
 const helpers = require('yeoman-test');
@@ -7,7 +6,7 @@ const generatorPkg = require('../package.json');
 describe('#basic', () => {
   beforeEach(() => {
     return helpers
-      .run(path.join(__dirname, '../src/app'))
+      .run(path.join(__dirname, '../generators/app'))
       .withPrompts({ someAnswer: true })
       .withOptions({ name: '@sc/lre' });
   });
@@ -15,7 +14,7 @@ describe('#basic', () => {
   it('should create correct package.json', () => {
     assert.jsonFileContent('package.json', {
       name: '@sc/lre',
-      license: 'MIT',
+      license: 'MIT'
     });
   });
   it('should create misc files', () => {
@@ -30,7 +29,7 @@ describe('#basic', () => {
 describe('#tsc option', () => {
   before(() => {
     return helpers
-      .run(path.join(__dirname, '../src/app'))
+      .run(path.join(__dirname, '../generators/app'))
       .withPrompts({ someAnswer: true })
       .withOptions({ name: '@sc/lre' });
   });
@@ -54,7 +53,7 @@ describe('#tsc option', () => {
 describe('#no-tsc option', () => {
   before(() => {
     return helpers
-      .run(path.join(__dirname, '../src/app'))
+      .run(path.join(__dirname, '../generators/app'))
       .withPrompts({ someAnswer: true })
       .withOptions({ name: '@sc/lre', tsc: false });
   });

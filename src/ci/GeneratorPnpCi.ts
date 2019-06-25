@@ -44,7 +44,7 @@ export class GeneratorPnpCi extends Generator {
         message: 'Create appveyor.yml file'
       }
     ];
-    return this.prompt(prompts).then(answers => {
+    return this.prompt(prompts as any).then(answers => {
       this.options = {
         ...this.options,
         ...answers
