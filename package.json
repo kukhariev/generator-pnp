@@ -32,7 +32,7 @@
     "postversion": "npm run build && git push --follow-tags"
   },
   "devDependencies": {
-    "@types/chai": "4.2.9",
+    "@types/chai": "4.2.10",
     "@types/mkdirp": "1.0.0",
     "@types/mocha": "7.0.1",
     "@types/node": "12.12.29",
