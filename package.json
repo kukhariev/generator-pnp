@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/chai": "4.2.10",
     "@types/mkdirp": "1.0.0",
-    "@types/mocha": "7.0.1",
+    "@types/mocha": "7.0.2",
     "@types/node": "12.12.29",
     "@types/yeoman-generator": "3.1.4",
     "chai": "4.2.0",
