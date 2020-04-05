@@ -62,7 +62,7 @@ export class GeneratorPnpApp extends Generator {
   initializing() {
     this.log(
       yosay(
-        'Welcome to the ' + chalk.default.yellow(`Node module generator (${generatorPkg.version})`)
+        'Welcome to the ' + chalk.yellow(`Node module generator (${generatorPkg.version})`)
       )
     );
     this.pkg = this.fs.readJSON(this.destinationPath('package.json'), {});
