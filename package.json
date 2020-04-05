@@ -1,6 +1,6 @@
 {
   "name": "generator-pnp",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "Generate TypeScript or JavaScript node project",
   "author": {
     "name": "o.kukhariev",
