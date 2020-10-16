@@ -34,7 +34,7 @@
     "@types/chai": "4.2.12",
     "@types/mkdirp": "1.0.1",
     "@types/mocha": "8.0.3",
-    "@types/node": "10.17.28",
+    "@types/node": "10.17.40",
     "@types/yeoman-generator": "3.1.4",
     "chai": "4.2.0",
     "copyfiles": "2.4.0",
