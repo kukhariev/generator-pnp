@@ -35,7 +35,7 @@
     "@types/mkdirp": "1.0.1",
     "@types/mocha": "8.2.2",
     "@types/node": "10.17.59",
-    "@types/yeoman-generator": "4.11.3",
+    "@types/yeoman-generator": "5.2.11",
     "chai": "4.3.4",
     "copyfiles": "2.4.1",
     "mocha": "8.3.2",
@@ -47,7 +47,7 @@
     "yeoman-test": "3.0.0"
   },
   "dependencies": {
-    "yeoman-generator": "^4.7.2",
+    "yeoman-generator": "^5.0.0",
     "chalk": "^4.0.0",
     "mkdirp": "^1.0.4",
     "yosay": "^2.0.2"
